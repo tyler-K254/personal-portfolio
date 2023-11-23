@@ -640,6 +640,10 @@ span {
     .contact form .input-box input {
         width: 100%;
     }
+
+    /* .portfolio h3 a {
+        font-size: 4.25vw;
+    } */
 }
 
 @media (max-width: 365px) {
@@ -649,6 +653,17 @@ span {
 
     .about-image img {
         width: 90vw;
+    }
+
+    .portfolio-layer h4 {
+        font-size: 2.4rem;
+        margin: 1rem 0 .1rem;
+        
+    }
+    
+    .portfolio-layer p {
+        font-size: 1.1rem;
+        margin: 1rem 0 1rem;
     }
 }
 
