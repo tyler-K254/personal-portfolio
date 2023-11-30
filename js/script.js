@@ -14,13 +14,27 @@ $(document).ready(function() {
 /*====================== toggle icon navbar ======================*/
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
+let homeContent = document.querySelectorAll('.home-content h1, .home-content h3, .home-content p');
+
 
 menuIcon.onclick = () => {
-    console.log('Menu icon clicked');
+    
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
-    console.log('Menu icon class toggled');
+    
+
+    // Check if 'active' class is present
+    // if (navbar.classList.contains('active')) {
+    //     homeContent.forEach(element => {
+    //         element.style.opacity = '0%';
+    //     });
+    // } else {
+    //     homeContent.forEach(element => {
+    //         element.style.opacity = '100%';
+    //     });
+    // }
 };
+
 
 /*====================== scroll sections active link ======================*/
 let sections = document.querySelectorAll('section');
@@ -41,15 +55,18 @@ window.onscroll = () => {
         }
     });
 
-    // Remove or reposition this comment as needed
+   /*====================== sticky navbar ======================*/
     let header = document.querySelector('header');
     header.classList.toggle('sticky', window.scrollY > 100);
 
     
     /*====================== remove toggle icon and navbar when click navbar link (scroll) ======================*/
+   
     menuIcon.classList.remove('bx-x');
     navbar.classList.remove('active');
-};
+    
+    }
+
 
  /*====================== scroll reveal ======================*/
  ScrollReveal({ 
@@ -57,11 +74,13 @@ window.onscroll = () => {
     distance: '80px',
     duration: 2000,
     delay: 200
+    
 });
 
-ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
+
+ScrollReveal().reveal('.home-content, home-content h3 .heading', { origin: 'top' });
 ScrollReveal().reveal('.home-image, .education-column, .services-container, .portfolio-box, .contact form', { origin: 'bottom' });
-ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
+ScrollReveal().reveal('.home-content h1, .about-img',  { origin: 'left' });
 ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
 
 

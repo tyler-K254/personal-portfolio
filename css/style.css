@@ -44,8 +44,8 @@ section{
     justify-content: space-between;
 }
 
-.header .sticky {
-    border-bottom: .1rem solid rgba (0, 0, 0 2);
+.header.sticky {
+    border-bottom: .1rem solid rgba (0, 0, 0, .2);
 }
 
 .logo{
@@ -62,9 +62,11 @@ section{
     transition: 1s;
 }
 
+
 .navbar a:hover,
 .navbar a.active {
     color: var(--main-color);
+    
 }
 
 #menu-icon{
@@ -544,6 +546,10 @@ span {
         padding: 2rem 3%;
     }
 
+    section {
+        padding: 10rem 8% 2rem;
+    }
+
     .services{
         padding-bottom: 7rem;
     }
@@ -562,24 +568,35 @@ span {
 }
 
 @media (max-width:768px) {
+
+    .home-content{
+        position: relative;
+        z-index: -1;
+    }
+
     #menu-icon {
         display: block;
+        padding-right: 6rem;
     }
     .navbar {
-        position: absolute;
-        z-index: 1;
+        position: absolute !important;
         top: 100%;
         left: 0;
         width: 100%;
         padding: 1rem 3%;
+        /* background:red; */
         background: var(--bg-color);
         border-top: .1rem solid rgba(0, 0, 0, .2);
         box-shadow: 0 .5rem 1rem solid rgba(0, 0, 0, .2);
         display: none;
+        z-index: 100 !important; /* Set a high z-index value */
     }
+
+
     
     .navbar.active {
         display: block;
+        z-index: 200;
     }
 
     .navbar a {
@@ -590,6 +607,7 @@ span {
 
     .home {
         flex-direction: column;
+        
     }
 
     .home-content h3 {
